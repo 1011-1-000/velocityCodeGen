@@ -16,7 +16,7 @@ import antlr.collections.List;
 public class HelloVelocity {
 	public static void main(String[] args){
 		VelocityEngine ve = new VelocityEngine();
-		ve.setProperty(Velocity.FILE_RESOURCE_LOADER_PATH, "E:/Users/Leo/Documents/GitHub/velocityCodeGen/src/com/vel/example");
+		ve.setProperty(Velocity.FILE_RESOURCE_LOADER_PATH, "E:/Users/Leo/Documents/GitHub/velocityCodeGen/resources");
 		ve.setProperty("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
 		
 		ve.init();

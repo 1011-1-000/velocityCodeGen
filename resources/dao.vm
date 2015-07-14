@@ -1,0 +1,64 @@
+package com.generate.dao;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import com.vel.noparse.${classNameUpCase};
+
+
+public class ${classNameUpCase}Dao{
+	
+	private Map<Integer,${classNameUpCase}> ${classNameLowCase}s = new HashMap<Integer,${classNameUpCase}>();
+	private Integer maxId = 0;
+	public ${classNameUpCase}Dao() {
+		${classNameUpCase} s1 = new ${classNameUpCase}();
+		${classNameUpCase} s2 = new ${classNameUpCase}();
+		${classNameUpCase} s3 = new ${classNameUpCase}();
+		${classNameUpCase} s4 = new ${classNameUpCase}();
+		${classNameUpCase} s5 = new ${classNameUpCase}();
+		${classNameUpCase} s6 = new ${classNameUpCase}();
+		${classNameUpCase} s7 = new ${classNameUpCase}();
+		${classNameUpCase} s8 = new ${classNameUpCase}();
+		${classNameLowCase}s.put(1, s1);
+		${classNameLowCase}s.put(2, s2);
+		${classNameLowCase}s.put(3, s3);
+		${classNameLowCase}s.put(4, s4);
+		${classNameLowCase}s.put(5, s5);
+		${classNameLowCase}s.put(6, s6);
+		${classNameLowCase}s.put(7, s7);
+		${classNameLowCase}s.put(8, s8);
+		maxId = 8;
+	}
+
+	public List<${classNameUpCase}> retrieveAll${classNameUpCase}s() {
+		List<${classNameUpCase}> stuList = new ArrayList<${classNameUpCase}>();
+		Iterator<Entry<Integer, ${classNameUpCase}>> iterator = ${classNameLowCase}s.entrySet().iterator();
+		while(iterator.hasNext()) {
+			Entry<Integer, ${classNameUpCase}> entry = iterator.next();
+			stuList.add(entry.getValue());
+		}
+		return stuList;
+	}
+
+	public ${classNameUpCase} retrieveById(Integer id) {
+		return ${classNameLowCase}s.get(id);
+	}
+
+	public void update(${classNameUpCase} ${classNameLowCase}) {
+		//${classNameLowCase}s.remove(${classNameLowCase}.getId());
+		${classNameLowCase}s.put(${classNameLowCase}.getId(), ${classNameLowCase});
+	}
+
+	public void add(${classNameUpCase} ${classNameLowCase}) {
+		maxId ++;
+		${classNameLowCase}.setId(maxId);
+		${classNameLowCase}s.put(maxId, ${classNameLowCase});
+	}
+
+	public void delete(Integer id) {
+		${classNameLowCase}s.remove(id);
+	}
+}
