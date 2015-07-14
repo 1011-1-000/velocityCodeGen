@@ -1,4 +1,4 @@
-#set($iAmVariable = "OK!")
+#set($iAmVariable = "Hi!")
 Welcome $name to velocity.com
 today is $date.
 #foreach($i in $list)
