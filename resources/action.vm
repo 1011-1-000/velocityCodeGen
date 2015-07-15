@@ -9,8 +9,8 @@ public class ${classNameUpCase}Action{
 	public ${classNameUpCase}Dao ${classNameLowCase}Dao;
 	private List<${classNameUpCase}> ${classNameLowCase}s;
 	private ${classNameUpCase} ${classNameLowCase};
-#foreach ($attr in ${attrs})
-	private ${attr[0]} ${attr[1]};
+#foreach ($attr in ${attrs.keySet()})
+	private ${attrs.get($attr)} ${attr};
 #end
 	public String ${classNameLowCase}List() {
 		${classNameLowCase}s = ${classNameLowCase}Dao.retrieveAll${classNameUpCase}s();
@@ -21,16 +21,14 @@ public class ${classNameUpCase}Action{
 		${classNameLowCase} = ${classNameLowCase}Dao.retrieveById(id);
 		return "${classNameLowCase}Modify.jsp";
 	}
-	public void ${classNameLowCase}Modify() {
-		${classNameLowCase} = new ${classNameUpCase}(#generateParam(${attrs}));
+	public void ${classNameLowCase}Modify(${classNameUpCase} ${classNameLowCase}) {
 		${classNameLowCase}Dao.update(${classNameLowCase});
 	}
 	
 	public String to${classNameUpCase}Add() {
 		return "${classNameLowCase}Add.jsp";
 	}
-	public void ${classNameLowCase}Add() {
-		${classNameLowCase} = new ${classNameUpCase}(#generateParam(${attrs}));
+	public void ${classNameLowCase}Add(${classNameUpCase} ${classNameLowCase}) {
 		${classNameLowCase}Dao.add(${classNameLowCase});
 	}
 	public void ${classNameLowCase}Delete() {
@@ -52,14 +50,14 @@ public class ${classNameUpCase}Action{
 		this.${classNameLowCase} = ${classNameLowCase};
 	}
 
-#foreach ($attr in ${attrs})
-	#set($attrName = ${attr[1]})
+#foreach ($attr in ${attrs.keySet()})
+	#set($attrName = ${attr})
 	#set($AttrName = "#toUpperCase($attrName)")
-	public ${attr[0]} get${AttrName}() {
-		return ${attr[1]};
+	public ${attrs.get($attr)} get${AttrName}() {
+		return ${attr};
 	}
-	public void set${AttrName}(${attr[0]} ${attr[1]}) {
-		this.${attr[1]} = ${attr[1]};
+	public void set${AttrName}(${attrs.get($attr)} ${attr}) {
+		this.${attr} = ${attr};
 	}
 #end
 

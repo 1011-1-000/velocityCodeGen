@@ -14,14 +14,14 @@ public class StudentDao{
 	private Map<Integer,Student> students = new HashMap<Integer,Student>();
 	private Integer maxId = 0;
 	public StudentDao() {
-		Student s1 = new Student(1,"s1",11,101,101);
-		Student s2 = new Student(2,"s2",12,102,102);
-		Student s3 = new Student(3,"s3",13,103,103);
-		Student s4 = new Student(4,"s4",14,104,104);
-		Student s5 = new Student(5,"s5",15,105,105);
-		Student s6 = new Student(6,"s6",16,106,106);
-		Student s7 = new Student(7,"s7",17,107,107);
-		Student s8 = new Student(8,"s8",18,108,108);
+		Student s1 = new Student();
+		Student s2 = new Student();
+		Student s3 = new Student();
+		Student s4 = new Student();
+		Student s5 = new Student();
+		Student s6 = new Student();
+		Student s7 = new Student();
+		Student s8 = new Student();
 		students.put(1, s1);
 		students.put(2, s2);
 		students.put(3, s3);

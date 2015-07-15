@@ -1,7 +1,7 @@
 ####################
 #macro (generateParam $paramArray)
-#foreach ($attr in $paramArray)
-#if ($velocityCount==1)$attr[1]#else,$attr[1]#end
+#foreach ($attr in $paramArray.keySet())
+#if ($velocityCount==1)$attr#else,$attr#end
 #end
 #end
 ####################

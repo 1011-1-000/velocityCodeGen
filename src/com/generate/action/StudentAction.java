@@ -9,10 +9,10 @@ public class StudentAction{
 	private List<Student> students;
 	private Student student;
 	private Integer id;
-	private String name;
-	private Integer age;
-	private Integer height;
 	private Integer weight;
+	private Integer height;
+	private Integer age;
+	private String name;
 	public String studentList() {
 		students = studentDao.retrieveAllStudents();
 		return "studentList.jsp";
@@ -22,16 +22,14 @@ public class StudentAction{
 		student = studentDao.retrieveById(id);
 		return "studentModify.jsp";
 	}
-	public void studentModify() {
-		student = new Student(id,name,age,height,weight);
+	public void studentModify(Student student) {
 		studentDao.update(student);
 	}
 	
 	public String toStudentAdd() {
 		return "studentAdd.jsp";
 	}
-	public void studentAdd() {
-		student = new Student(id,name,age,height,weight);
+	public void studentAdd(Student student) {
 		studentDao.add(student);
 	}
 	public void studentDelete() {
@@ -59,17 +57,11 @@ public class StudentAction{
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public Integer getWeight() {
+		return weight;
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public Integer getAge() {
-		return age;
-	}
-	public void setAge(Integer age) {
-		this.age = age;
+	public void setWeight(Integer weight) {
+		this.weight = weight;
 	}
 	public Integer getHeight() {
 		return height;
@@ -77,11 +69,17 @@ public class StudentAction{
 	public void setHeight(Integer height) {
 		this.height = height;
 	}
-	public Integer getWeight() {
-		return weight;
+	public Integer getAge() {
+		return age;
 	}
-	public void setWeight(Integer weight) {
-		this.weight = weight;
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

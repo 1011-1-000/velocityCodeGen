@@ -9,10 +9,10 @@ public class TeacherAction{
 	private List<Teacher> teachers;
 	private Teacher teacher;
 	private Integer id;
-	private String name;
 	private String serializeNo;
-	private String titile;
 	private String subject;
+	private String titile;
+	private String name;
 	public String teacherList() {
 		teachers = teacherDao.retrieveAllTeachers();
 		return "teacherList.jsp";
@@ -22,16 +22,14 @@ public class TeacherAction{
 		teacher = teacherDao.retrieveById(id);
 		return "teacherModify.jsp";
 	}
-	public void teacherModify() {
-		teacher = new Teacher(id,name,serializeNo,titile,subject);
+	public void teacherModify(Teacher teacher) {
 		teacherDao.update(teacher);
 	}
 	
 	public String toTeacherAdd() {
 		return "teacherAdd.jsp";
 	}
-	public void teacherAdd() {
-		teacher = new Teacher(id,name,serializeNo,titile,subject);
+	public void teacherAdd(Teacher teacher) {
 		teacherDao.add(teacher);
 	}
 	public void teacherDelete() {
@@ -59,17 +57,17 @@ public class TeacherAction{
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
 	public String getSerializeNo() {
 		return serializeNo;
 	}
 	public void setSerializeNo(String serializeNo) {
 		this.serializeNo = serializeNo;
+	}
+	public String getSubject() {
+		return subject;
+	}
+	public void setSubject(String subject) {
+		this.subject = subject;
 	}
 	public String getTitile() {
 		return titile;
@@ -77,11 +75,11 @@ public class TeacherAction{
 	public void setTitile(String titile) {
 		this.titile = titile;
 	}
-	public String getSubject() {
-		return subject;
+	public String getName() {
+		return name;
 	}
-	public void setSubject(String subject) {
-		this.subject = subject;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

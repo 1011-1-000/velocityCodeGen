@@ -16,5 +16,7 @@
 	<classpathentry kind="lib" path="G:/文档保存/学习/工具/velocity-1.7/lib/werken-xpath-0.9.4.jar"/>
 	<classpathentry kind="lib" path="G:/文档保存/学习/工具/velocity-1.7/lib/test/hsqldb-1.7.1.jar"/>
 	<classpathentry kind="lib" path="G:/文档保存/学习/工具/velocity-1.7/lib/test/junit-3.8.1.jar"/>
+	<classpathentry kind="lib" path="lib/javaparser-1.0.9.jar"/>
+	<classpathentry kind="lib" path="lib/xjavadoc-1.5-snapshot050611.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
